@@ -13,9 +13,10 @@ export default class FoodFinder {
   }
 
   findFood(searchTerm: string): Food {
+    searchTerm = searchTerm.toUpperCase()
     for (let i = 0; i < this.menu.length; i++) {
       let foodItem = this.menu[i]
-      if (foodItem.name.indexOf(searchTerm) > -1) {
+      if (foodItem.name.toUpperCase().indexOf(searchTerm) > -1) {
         return foodItem
       }
     }

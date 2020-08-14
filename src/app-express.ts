@@ -18,7 +18,16 @@ app.get("/file", (req, res) => {
 })
 
 app.get("/search/:food", (req, res) => {
-  res.send(foodFinder.findFood(req.params.food))
+  let searchedFood = foodFinder.findFood(req.params.food)
+  // TODO:
+  // Return a message if no food item is found
+  if (searchedFood) {
+    res.send(searchedFood)
+  } else {
+    res.send("food not found :(")
+  }
+
+  // res.send(foodFinder.findFood(req.params.food))
 })
 
 app.set("title", "Food finder")
