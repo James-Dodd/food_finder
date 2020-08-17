@@ -1,4 +1,4 @@
-const express = require("express")
+import express, { Request, Response } from "express"
 import FoodFinder from "./services/food-finder"
 
 const app = express()
@@ -17,7 +17,7 @@ app.get("/file", (req, res) => {
   })
 })
 
-app.get("/search/:food", (req, res) => {
+app.get("/search/:food", (req: Request, res: Response) => {
   let searchedFood = foodFinder.findFood(req.params.food)
   // TODO:
   // Return a message if no food item is found
@@ -26,9 +26,9 @@ app.get("/search/:food", (req, res) => {
   } else {
     res.send("food not found :(")
   }
-
-  // res.send(foodFinder.findFood(req.params.food))
 })
+
+app.post
 
 app.set("title", "Food finder")
 
