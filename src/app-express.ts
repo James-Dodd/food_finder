@@ -4,10 +4,15 @@ import FoodFinder from "./services/food-finder"
 const app = express()
 const port = 3000
 
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+)
 let foodFinder = new FoodFinder()
 
 app.get("/", (req, res) => {
-  res.send("<div>Welcome to the food finder!</div>")
+  res.render("index")
 })
 
 app.get("/file", (req, res) => {
@@ -17,18 +22,18 @@ app.get("/file", (req, res) => {
   })
 })
 
-app.get("/search/:food", (req: Request, res: Response) => {
-  let searchedFood = foodFinder.findFood(req.params.food)
-  // TODO:
-  // Return a message if no food item is found
+app.post("/search", (req: Request, res: Response) => {
+  let searchedFood = foodFinder.findFood(req.body.food)
+
   if (searchedFood) {
-    res.send(searchedFood)
+    res.render("order", {
+      title: "Your Order",
+      item: searchedFood,
+    })
   } else {
     res.send("food not found :(")
   }
 })
-
-app.post
 
 app.set("title", "Food finder")
 

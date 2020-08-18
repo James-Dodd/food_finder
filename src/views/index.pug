@@ -2,4 +2,10 @@ html
   head
     title= title
   body
-    h1= message
+    h1
+      | Food Finder
+    form(action='/search', method='POST')
+      label(for="food")
+        | Search for food:
+      input(type="text", name="food", id = "food")
+      input(type="submit", value="Submit")
