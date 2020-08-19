@@ -10,6 +10,10 @@ export default class Food {
   price: number
   size: Size
 
+  getSize(): string {
+    return Size[this.size]
+  }
+
   constructor(name: string, calories: number, price: number, size: Size) {
     this.name = name
     this.calories = calories
