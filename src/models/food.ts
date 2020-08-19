@@ -1,7 +1,7 @@
 export enum Size {
-  Small,
-  Medium,
-  Large,
+  Small = 0,
+  Medium = 1,
+  Large = 2,
 }
 
 export default class Food {
@@ -10,7 +10,7 @@ export default class Food {
   price: number
   size: Size
 
-  getSize(): string {
+  getSizeString(): string {
     return Size[this.size]
   }
 
