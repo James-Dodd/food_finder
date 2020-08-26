@@ -1,26 +1,18 @@
 import React from "react"
 import logo from "./logo.svg"
 import "./App.css"
-
-interface HeaderProps {
-  name: string
-  age?: number
-}
-
-function Header(props: HeaderProps) {
-  return (
-    <h1>
-      Hello {props.name}. You are {props.age && 99}
-    </h1>
-  )
-}
+import Header from "./components/Header/index"
+import FoodSearch from "./components/FoodSearch/index"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Header name="Harry" age={16} />
-        <Header name="Sally" />
+        <Header name="Harry" age={16}>
+          This content goes inside
+        </Header>
+        <FoodSearch />
+        {/* <Header name="Sally" /> */}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
