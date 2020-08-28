@@ -6,13 +6,12 @@ const StyledH1 = styled.h1`
   font-size: 80px;
 `
 
-interface HeaderProps {
+interface IHeaderProps {
   name: string
   age?: number
   children: React.ReactNode
 }
 
-export default function Header(props: HeaderProps) {
+export default function Header(props: IHeaderProps) {
   return <StyledH1>{props.children}</StyledH1>
 }
-
