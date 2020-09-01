@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./App.css"
 import FoodSelect from "./components/FoodSelect/index"
 
@@ -9,6 +9,10 @@ function App() {
     basket.push(food)
     setBasket(basket)
   }
+
+  useEffect(() => {
+    fetch("/hello").then((response) => console.log(response.body))
+  })
 
   return (
     <div className="App">

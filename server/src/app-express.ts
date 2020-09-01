@@ -22,6 +22,11 @@ app.get("/file", (req, res) => {
   })
 })
 
+app.get("/hello", (req: Request, res: Response) => {
+  res.setHeader("Content-Type", "application/json")
+  res.send({ "Hello there!": "I'm some Javascript" })
+})
+
 app.post("/search", (req: Request, res: Response) => {
   let searchedFood = foodFinder.findFood(req.body.food)
 
