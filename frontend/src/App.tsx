@@ -11,7 +11,9 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("/hello").then((response) => console.log(response.body))
+    fetch("/hello")
+      .then((response) => response.json())
+      .then((response) => console.log(response))
   })
 
   return (
