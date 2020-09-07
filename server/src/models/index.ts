@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 
 import Drink from "./drink"
+import Food from "./food"
 
 const connectDb = () => {
   return mongoose.connect("mongodb://localhost:27017/food-app", {
@@ -9,7 +10,7 @@ const connectDb = () => {
   })
 }
 
-const models = { Drink }
+const models = { Drink, Food }
 
 export { connectDb }
 
