@@ -1,4 +1,5 @@
 import Food, { Size } from "../models/food"
+import models from "../models"
 
 export default class FoodFinder {
   menu: Food[]
@@ -21,4 +22,10 @@ export default class FoodFinder {
       }
     }
   }
+}
+
+export const getDrinks = () => {
+  models.Drink.find({}, (err, users) => {
+    console.log(users)
+  })
 }

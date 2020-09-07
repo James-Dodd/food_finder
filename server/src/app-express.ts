@@ -1,19 +1,8 @@
 import express, { Request, Response } from "express"
 import mongoose from "mongoose"
 
-import FoodFinder from "./services/food-finder"
+import FoodFinder, { getDrinks } from "./services/food-finder"
 import models, { connectDb } from "./models"
-
-const schema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      unique: true,
-      required: true,
-    },
-  },
-  { timestamps: true }
-)
 
 const app = express()
 const port = 4000
@@ -62,17 +51,10 @@ app.set("views", "./out/views")
 app.use(express.static("public"))
 
 connectDb().then(async () => {
-  createDrinks()
-
+  getDrinks()
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
 })
 
-const createDrinks = async () => {
-  const drink1 = new models.Drink({
-    name: "Beer",
-  })
-
-  await drink1.save()
-}
+let drinks = []
