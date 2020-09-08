@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose, { Document } from "mongoose"
 
 // TODO: map between size enum and strings
 export enum Size {
@@ -9,23 +9,12 @@ export enum Size {
 
 // TODO: work out best way to have methods on these models
 
-// export default class Food {
-//   name: string
-//   calories: number
-//   price: number
-//   size: Size
-
-//   getSizeString(): string {
-//     return Size[this.size]
-//   }
-
-//   constructor(name: string, calories: number, price: number, size: Size) {
-//     this.name = name
-//     this.calories = calories
-//     this.price = price
-//     this.size = size
-//   }
-// }
+export interface IFood extends Document {
+  name: string
+  calories: number
+  price: number
+  size: string
+}
 
 //Mongoose
 const foodSchema = new mongoose.Schema(
@@ -54,6 +43,6 @@ const foodSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-const Food = mongoose.model("Food", foodSchema)
+const Food = mongoose.model<IFood>("Food", foodSchema)
 
 export default Food

@@ -25,8 +25,9 @@ app.use(
 )
 let foodFinder
 
-app.get("/", (req, res) => {
-  res.render("index")
+app.get("/menu", (req, res) => {
+  res.setHeader("Content-Type", "application/json")
+  res.send(foodFinder.menu)
 })
 
 app.get("/file", (req, res) => {
@@ -62,19 +63,9 @@ app.set("views", "./out/views")
 app.use(express.static("public"))
 
 connectDb().then(async () => {
-  createDrinks()
-
   foodFinder = new FoodFinder()
 
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
 })
-
-const createDrinks = async () => {
-  const drink1 = new models.Drink({
-    name: "Beer",
-  })
-
-  await drink1.save()
-}

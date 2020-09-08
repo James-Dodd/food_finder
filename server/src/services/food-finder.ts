@@ -1,8 +1,8 @@
-import Food, { Size } from "../models/food"
+import Food, { Size, IFood } from "../models/food"
 import models from "../models"
 
 export default class FoodFinder {
-  menu: models.Food[]
+  menu: IFood[]
 
   constructor() {
     // let hamburgerMedium = new Food("Hamburger (Medium)", 800, 3.99, Size.Medium)
