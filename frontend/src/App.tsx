@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import "./App.css"
 import FoodSelect from "./components/FoodSelect/index"
 import IFood from "./models/food"
+import FoodItem from "./components/FoodItem"
 
 function App() {
   // let [basket, setBasket] = useState<string[]>([])
@@ -13,7 +14,13 @@ function App() {
       .then((response) => setMenu(response))
   }, [])
 
-  return <div className="App"></div>
+  return (
+    <div className="App">
+      {menu.map((foodItem) => {
+        return <FoodItem item={foodItem} />
+      })}
+    </div>
+  )
 }
 
 export default App
