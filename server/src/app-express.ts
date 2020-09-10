@@ -30,6 +30,10 @@ app.get("/menu", (req, res) => {
   res.send(foodFinder.menu)
 })
 
+app.post("/order", (req, res) => {
+  console.log("Received")
+})
+
 app.get("/file", (req, res) => {
   res.render("index", {
     title: "I'm using pug!",
