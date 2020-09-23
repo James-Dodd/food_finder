@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express"
 import mongoose from "mongoose"
+import bodyParser from "body-parser"
+import OrderService from "./services/order-service"
 
 import FoodFinder from "./services/food-finder"
 import models, { connectDb } from "./models"
@@ -16,6 +18,10 @@ const schema = new mongoose.Schema(
 )
 
 const app = express()
+app.use(bodyParser.json())
+// in latest body-parser use like below.
+app.use(bodyParser.urlencoded({ extended: true }))
+
 const port = 4000
 
 app.use(
@@ -31,7 +37,10 @@ app.get("/menu", (req, res) => {
 })
 
 app.post("/order", (req, res) => {
-  console.log("Received")
+  const order = new OrderService()
+  order
+    .createOrder(req.body.customerId, req.body.food)
+    .then(() => res.sendStatus(201))
 })
 
 app.get("/file", (req, res) => {

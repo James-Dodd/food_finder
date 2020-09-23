@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 
+import Order from "./order"
 import Drink from "./drink"
 import Food from "./food"
 
@@ -10,7 +11,7 @@ const connectDb = () => {
   })
 }
 
-const models = { Drink, Food }
+const models = { Drink, Food, Order }
 
 export { connectDb }
 

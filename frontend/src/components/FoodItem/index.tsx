@@ -19,16 +19,17 @@ interface IFoodItem {
 const FoodItem: React.FC<IFoodItem> = (props) => {
   function handleClick() {
     console.log("Button clicked")
-      const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer my-token',
-            'My-Custom-Header': 'foobar'
-        },
-        body: JSON.stringify({ title: 'React POST Request Example' })
-    };
-    fetch("/order", { method: "POST" })
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        food: "hotdog",
+        customerId: "53e827b5-7b35-444e-b1ac-0fedebb1adaa",
+      }),
+    }
+    fetch("/order", requestOptions)
   }
 
   return (
