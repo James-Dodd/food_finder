@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders mount 1`] = `
+<FoodItem
+  item={
+    Object {
+      "calories": 12,
+      "name": "burger",
+      "price": 51,
+      "size": "medium",
+    }
+  }
+>
+  <styled.div>
+    <div
+      className="sc-AxjAm klYsxZ"
+    >
+      <p>
+        burger
+      </p>
+      <p>
+        51
+      </p>
+      <p>
+        12
+      </p>
+      <p>
+        medium
+      </p>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Order
+      </button>
+    </div>
+  </styled.div>
+</FoodItem>
+`;
+
+exports[`Header renders shallow 1`] = `
+<styled.div>
+  <p>
+    burger
+  </p>
+  <p>
+    51
+  </p>
+  <p>
+    12
+  </p>
+  <p>
+    medium
+  </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Order
+  </button>
+</styled.div>
+`;

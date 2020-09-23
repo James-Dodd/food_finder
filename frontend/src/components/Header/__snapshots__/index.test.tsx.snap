@@ -7,9 +7,11 @@ exports[`Header renders mount 1`] = `
 >
   <styled.h1>
     <h1
-      className="sc-AxjAm kTpwDe"
+      className="sc-AxjAm SLPSP"
     >
-      Here is some example content
+      <div>
+        Here is some example content
+      </div>
     </h1>
   </styled.h1>
 </Header>
@@ -17,6 +19,8 @@ exports[`Header renders mount 1`] = `
 
 exports[`Header renders shallow 1`] = `
 <styled.h1>
-  Here is some example content
+  <div>
+    Here is some example content
+  </div>
 </styled.h1>
 `;

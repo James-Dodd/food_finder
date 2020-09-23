@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const StyledH1 = styled.h1`
   color: red;
-  font-size: 80px;
+  font-size: 81px;
 `
 
 interface IHeaderProps {
@@ -13,5 +13,9 @@ interface IHeaderProps {
 }
 
 export default function Header(props: IHeaderProps) {
-  return <StyledH1>{props.children}</StyledH1>
+  return (
+    <StyledH1>
+      <div>{props.children}</div>
+    </StyledH1>
+  )
 }
