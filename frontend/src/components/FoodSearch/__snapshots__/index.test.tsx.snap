@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders mount 1`] = `
+<FoodSearch>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Search For Food:
+        <input
+          id="food"
+          name="food"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <input
+        type="submit"
+        value="Submit"
+      />
+    </form>
+    <div>
+      <h2>
+        Searched foods
+      </h2>
+    </div>
+  </div>
+</FoodSearch>
+`;
+
+exports[`Header renders shallow 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Search For Food:
+      <input
+        id="food"
+        name="food"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+  <div>
+    <h2>
+      Searched foods
+    </h2>
+  </div>
+</div>
+`;

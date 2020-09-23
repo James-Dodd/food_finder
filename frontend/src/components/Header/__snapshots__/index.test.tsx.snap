@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders mount 1`] = `
+<Header
+  age={12}
+  name="whatever"
+>
+  <styled.h1>
+    <h1
+      className="sc-AxjAm kTpwDe"
+    >
+      Here is some example content
+    </h1>
+  </styled.h1>
+</Header>
+`;
+
+exports[`Header renders shallow 1`] = `
+<styled.h1>
+  Here is some example content
+</styled.h1>
+`;
