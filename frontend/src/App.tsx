@@ -9,7 +9,7 @@ function App() {
   let [menu, setMenu] = useState<IFood[]>([])
 
   useEffect(() => {
-    fetch("/menu")
+    fetch("http://localhost:4000/menu")
       .then((response) => response.json())
       .then((response) => setMenu(response))
   }, [])

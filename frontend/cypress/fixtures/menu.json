@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "5f5630c40a2778656321f3e8",
+    "name": "Cat food (Medium)",
+    "price": 3.99,
+    "calories": 300,
+    "size": "medium"
+  },
+  {
+    "_id": "5f58d4dc3151fb46c6f471d3",
+    "name": "Rat poison",
+    "price": 19.99,
+    "size": "Extra large",
+    "calories": 100
+  }
+]

@@ -2,7 +2,7 @@ import express, { Request, Response } from "express"
 import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import OrderService from "./services/order-service"
-
+import cors from "cors"
 import FoodFinder from "./services/food-finder"
 import models, { connectDb } from "./models"
 
@@ -21,6 +21,7 @@ const app = express()
 app.use(bodyParser.json())
 // in latest body-parser use like below.
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
 
 const port = 4000
 
@@ -33,6 +34,11 @@ let foodFinder
 
 app.get("/menu", (req, res) => {
   res.setHeader("Content-Type", "application/json")
+  res.setHeader("Acesss-Control-Allow-Origin", "*")
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  )
   res.send(foodFinder.menu)
 })
 
