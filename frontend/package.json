@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-e2e": "npm start && wait-on http://localhost:8000; server_pid=$!; cypress run; test_exit_code=$?; kill \"$server_pid\"; exit \"$test_exit_code\";",
+    "test-e2e": "npm start && wait-on http://localhost:3000; server_pid=$!; cypress run; test_exit_code=$?; kill \"$server_pid\"; exit \"$test_exit_code\";",
     "cypress": "cypress open"
   },
   "eslintConfig": {
