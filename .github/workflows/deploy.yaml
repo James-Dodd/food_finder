@@ -1,0 +1,39 @@
+name: master-build
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build-and-test-and-deploy:
+    name: build, test and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Install
+        working-directory: ./frontend
+        run: |
+          npm install
+
+      - name: test
+        working-directory: ./frontend
+        run: |
+          npm test
+
+      - name: cypress tests
+        working-directory: ./frontend
+        run: |
+          npm run test-e2e
+
+      - name:
+          Deploy website to static site in azure storage
+          # master causes this step to fail so pointing to last working commit until fixed
+        uses: lauchacarro/Azure-Storage-Action@9225056
+        with:
+          enabled-static-website: true
+          folder: ./frontend
+          connection-string: ${{ secrets.SITE_CONNECTION_STRING }}
