@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react"
+import React from "react"
 import IFood from "../../models/food"
 import styled from "styled-components"
 

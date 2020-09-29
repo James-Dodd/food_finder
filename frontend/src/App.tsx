@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import "./App.css"
-import FoodSelect from "./components/FoodSelect/index"
 import IFood from "./models/food"
 import FoodItem from "./components/FoodItem"
 
@@ -12,6 +11,7 @@ function App() {
     fetch("http://localhost:4000/menu")
       .then((response) => response.json())
       .then((response) => setMenu(response))
+      .catch((e) => console.log(e))
   }, [])
 
   return (
