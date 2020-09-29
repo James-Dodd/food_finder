@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-e2e": "npm start && wait-on http://localhost:3000; server_pid=$!; cypress run; test_exit_code=$?; kill \"$server_pid\"; exit \"$test_exit_code\";",
+    "test-e2e": "serve build/. -p 3000 & wait-on http://localhost:3000; server_pid=$!; cypress run; test_exit_code=$?; kill \"$server_pid\"; exit \"$test_exit_code\";",
     "cypress": "cypress open"
   },
   "eslintConfig": {
@@ -47,6 +47,7 @@
     "enzyme-adapter-react-16": "1.15.4",
     "enzyme-to-json": "3.5.0",
     "jest-fetch-mock": "3.0.3",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "ts-jest": "26.4.0",
     "wait-on": "^5.2.0"
